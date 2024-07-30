@@ -1,12 +1,18 @@
 import SideBar from "./SideBar";
 import "./Style.css";
-import WorkArea from "./WorkArea";
+import ChatArea from "./ChatArea";
 
 const MainContainer = () => {
   return (
     <div className="Main-Container">
       <SideBar />
-      <WorkArea />
+      <ChatArea
+        props={{
+          name: "Test 1",
+          lastMessage: "Last Message 1",
+          time: "today",
+        }}
+      />
     </div>
   );
 };
