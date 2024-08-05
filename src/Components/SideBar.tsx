@@ -9,8 +9,27 @@ import {
   Search,
 } from "@mui/icons-material";
 import ConversationItem from "./ConversationItem";
+import { useState } from "react";
 
 const SideBar = () => {
+  const [conversations] = useState([
+    {
+      name: "Test 1",
+      lastMessage: "Last Message 1",
+      time: "today",
+    },
+    {
+      name: "Test 2",
+      lastMessage: "Last Message 2",
+      time: "today",
+    },
+    {
+      name: "Test 3",
+      lastMessage: "Last Message 3",
+      time: "today",
+    },
+  ]);
+
   return (
     <div className="SideBar-Container">
       <div className="sb-header">
@@ -40,8 +59,10 @@ const SideBar = () => {
         </IconButton>
         <input type="text" placeholder="Search" className="sb-search-box" />
       </div>
-          <div className="sb-conversation">
-              <ConversationItem/>
+      <div className="sb-conversation">
+        {conversations.map((conversation) => {
+          return <ConversationItem props={conversation} />;
+        })}
       </div>
     </div>
   );
