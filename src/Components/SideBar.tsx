@@ -60,8 +60,8 @@ const SideBar = () => {
         <input type="text" placeholder="Search" className="sb-search-box" />
       </div>
       <div className="sb-conversation">
-        {conversations.map((conversation) => {
-          return <ConversationItem props={conversation} />;
+        {conversations.map((conversation,index) => {
+          return <ConversationItem props={conversation} key={index}/>;
         })}
       </div>
     </div>

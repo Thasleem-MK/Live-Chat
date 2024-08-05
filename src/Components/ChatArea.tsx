@@ -2,6 +2,8 @@ import { IconButton } from "@mui/material";
 import { Props } from "./ConversationItem";
 import "./Style.css";
 import { Delete, Send } from "@mui/icons-material";
+import MessageOthers from "./MessageOthers";
+import MessageSelf from "./MessageSelf";
 
 const ChatArea = ({ props }: { props: Props }) => {
   return (
@@ -17,10 +19,23 @@ const ChatArea = ({ props }: { props: Props }) => {
         </IconButton>
       </div>
 
-      <div className="chatArea-message">Prepbytes 6th video 6 min</div>
+      <div className="chatArea-message">
+        <MessageOthers/>
+        <MessageSelf/>
+        <MessageOthers/>
+        <MessageSelf/>
+        <MessageOthers/>
+        <MessageSelf/>
+        <MessageOthers/>
+        <MessageSelf/>
+        <MessageOthers/>
+        <MessageSelf/>
+        <MessageOthers/>
+        <MessageSelf/>
+      </div>
 
       <div className="chatArea-input">
-        <input placeholder="Type a message" className="search-box" />
+        <textarea placeholder="Type a message" className="search-box" rows={1}/>
         <IconButton>
           <Send />
         </IconButton>
